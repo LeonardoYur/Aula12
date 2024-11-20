@@ -10,6 +10,7 @@ try {
     $comando = $conexao->prepare($codigoSQL);
     $apagar = $conexao->prepare($excluir);
     $result = $comando->execute(array('pa' => $_GET['pa'], 'med' => $_GET['med'], 'dt' => $_GET['dt'], 'hr' => $_GET['hr'], 'ds' => $_GET['ds']));
+    var_dump($_SESSION['id']);
     $resultado = $apagar->execute(array('id' => $_SESSION['id']));
 
     $resposta = array('resposta' => $resultado);
